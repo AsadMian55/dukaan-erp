@@ -1,0 +1,17 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - web/**
+  errors:
+    # CI pins Flutter 3.50, where package:flutter/material.dart is deprecated
+    # in favour of material_ui but remains fully supported. The ecosystem
+    # (Riverpod, Printing, FilePicker) still builds on it, so the classic
+    # import stays until those packages migrate.
+    deprecated_member_use: ignore
+
+linter:
+  rules:
+    prefer_single_quotes: false
